@@ -1,4 +1,4 @@
-#!/bin/bash -ax
+#!/bin/bash
 
 ### Convert scanned pdf files to image and apply OCR for brazilian portuguese
 
@@ -16,19 +16,22 @@ do
 
 
 	echo "apply OCR on image (output txt file): ${tiff_file}..."
-	tesseract --tessdata-dir /usr/share "${tiff_file}" "${output_file}" -l por
+	#tesseract --tessdata-dir /usr/share "${tiff_file}" "${output_file}" -l por
+	tesseract "${tiff_file}" "${output_file}" -l por
 	exit_code=$?
         echo "status code: ${exit_code}"
         echo ""
 	
 	echo "apply OCR on image (output searchable pdf): ${tiff_file}..."
-        tesseract --tessdata-dir /usr/share "${tiff_file}" "${output_file}_searchable" -l por pdf
+        #tesseract --tessdata-dir /usr/share "${tiff_file}" "${output_file}_searchable" -l por pdf
+        tesseract "${tiff_file}" "${output_file}_searchable" -l por pdf
         exit_code=$?
         echo "status code: ${exit_code}"
         echo ""
 
 	echo "apply OCR on image (output hocr): ${tiff_file}..."
-        tesseract --tessdata-dir /usr/share "${tiff_file}" "${output_file}" -l por hocr
+        #tesseract --tessdata-dir /usr/share "${tiff_file}" "${output_file}" -l por hocr
+        tesseract "${tiff_file}" "${output_file}" -l por hocr
         exit_code=$?
         echo "status code: ${exit_code}"
         echo ""
