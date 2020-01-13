@@ -8,7 +8,7 @@ sudo apt update
 sudo apt install -y tesseract-ocr
 
 # install portuguese language
-sudo apt-get install tesseract-ocr-por
+sudo apt-get install -y tesseract-ocr-por
 
 # for any other language
 # sudo apt-get install tesseract-ocr-[lang]
@@ -17,7 +17,7 @@ sudo apt-get install tesseract-ocr-por
 tesseract --list-langs
 
 # install imageMagick (if you do not have installed already)
-sudo apt install imagemagick
+sudo apt install -y imagemagick
 
 
 #on the file '/etc/ImageMagick-6/policy.xml', change the line:
